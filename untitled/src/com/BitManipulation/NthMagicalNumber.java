@@ -1,0 +1,21 @@
+package com.BitManipulation;
+
+//for any decimal number find the number value in different base
+
+public class NthMagicalNumber {
+    public static void main(String[] args) {
+
+        int n = 6;
+        int base = 5;
+        int ans = 0;
+
+        while(n > 0){
+            int last = n & 1;
+            n = n >> 1;
+            ans += last * base;
+            base = base * 2;
+        }
+        System.out.println(ans);
+
+    }
+}
