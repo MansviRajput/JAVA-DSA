@@ -2,6 +2,8 @@ package Striver.DSA.Basic;
 
 //countDigit , reverse , palindrome , Greatest Common Divisor , Armstrong
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class KnowBasicMath {
@@ -23,10 +25,81 @@ public class KnowBasicMath {
 //        System.out.println(GCD(4,6));
 //        System.out.println(GCD01(12,18));
 
+//        System.out.println(isArmsStrong(153));
+//        System.out.println(isArmstrongRecursive(153));
+//        System.out.println(isArmstrongString(153));
+
+        int[] num = divisors(6);
+        System.out.println(Arrays.toString(num));
+
 
     }
 
+    private
 
+    private static int[] divisors(int n){
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for(int i=1;i<=n/2;i++){
+            if(n%i==0){
+                list.add(i);
+            }
+        }
+
+        int[] nums = new int[list.size()];
+        for(int i=0;i<list.size();i++){
+            nums[i]=list.get(i);
+        }
+        return nums;
+    }
+
+    private static int powerSum(int num, int digits) {
+        if (num == 0) return 0;
+
+        int digit = num % 10;
+        return (int) Math.pow(digit, digits) + powerSum(num / 10, digits);
+    }
+
+    private static boolean isArmstrongRecursive(int num) {
+        int digits = String.valueOf(num).length();
+        return powerSum(num, digits) == num;
+    }
+
+    private static boolean isArmstrongString(int num) {
+        String str = String.valueOf(num);
+        int digits = str.length();
+        int sum = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            int digit = str.charAt(i) - '0';
+            sum += Math.pow(digit, digits);
+        }
+
+        return sum == num;
+    }
+
+
+    private static boolean isArmsStrong(int n){
+        if(n == 0) return true;
+
+        int count = 0;
+        int original = n;
+        int temp = n;
+        while(temp > 0){
+            temp/=10;
+            count++;
+        }
+
+        temp = n;
+        int sum = 0;
+
+        while(temp>0){
+            int lastDigit = temp%10;
+            sum += (int) Math.pow(lastDigit,count);
+            temp/=10;
+        }
+        return sum == original;
+    }
 
     private static int GCD01(int a,int b){
         a = Math.abs(a);
