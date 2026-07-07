@@ -1,6 +1,6 @@
 package Striver.DSA.Basic;
 
-//countDigit , reverse , palindrome , Greatest Common Divisor , Armstrong
+//countDigit , reverse , palindrome , Greatest Common Divisor , Armstrong , Divisors , Prime Number
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,12 +30,24 @@ public class KnowBasicMath {
 //        System.out.println(isArmstrongRecursive(153));
 //        System.out.println(isArmstrongString(153));
 
-        int[] num = divisors(6);
-        System.out.println(Arrays.toString(num));
+//        int[] num = divisors(6);
+//        System.out.println(Arrays.toString(num));
+//
+//        System.out.println(primeNumber(13));
 
+    }
 
-
-
+    private static boolean primeNumber(int n){
+        int count = 0;
+        for (int i = 1; i*i <= n; i++){
+            if (n % i == 0){
+                count++;
+                if(i != n/i){
+                    count++;
+                }
+            }
+        }
+        return count == 2;
     }
 
 
