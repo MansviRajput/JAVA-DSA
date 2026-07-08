@@ -1,7 +1,7 @@
 package Striver.DSA.Basic;
 
 // number from 1 to n , number from n to 1 , sum of first n number , factorial of given n number , reverse a array
-//  check if string is palindrome , fibonacci number
+//  check if string is palindrome , fibonacci number using recursion and dynamic programming
 
 import java.util.Arrays;
 
