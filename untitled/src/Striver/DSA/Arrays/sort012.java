@@ -10,7 +10,7 @@ class sort012 {
         System.out.println(Arrays.toString(nums));
     }
 
-    // public void sortZeroOneTwo(int[] nums) {
+    // private static void sortZeroOneTwo(int[] nums) {
     //     int zeros = 0;
     //     int ones = 0;
     //     int twos = 0;
