@@ -1,6 +1,6 @@
 package com.BinarySearch;
 
-//Order Agnostic Search used when the user dont know about whether teh array is sorted in ascending order or descending order
+//Order Agnostic Search used when the user dont know about whether the array is sorted in ascending order or descending order
 
 public class OrderAgnosticByBinarySearch {
 
