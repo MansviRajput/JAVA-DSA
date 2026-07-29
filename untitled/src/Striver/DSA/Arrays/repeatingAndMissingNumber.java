@@ -6,8 +6,8 @@ import java.util.HashMap;
 public class repeatingAndMissingNumber {
     public static void main(String[] args) {
         int[] nums = {3, 5, 4, 1, 1};
-//        System.out.println(Arrays.toString(solve(nums)));
-        System.out.println(Arrays.toString(solve2(nums)));
+        System.out.println(Arrays.toString(solve(nums)));
+//        System.out.println(Arrays.toString(solve2(nums)));
     }
 
     private static int[] solve(int[] nums) {
