@@ -1,4 +1,4 @@
-package Striver.DSA.Arrays;
+package Striver.DSA.BinarySearch;
 
 public class findSquareRootOfNumber {
     public static void main(String[] args) {

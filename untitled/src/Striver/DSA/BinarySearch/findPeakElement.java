@@ -2,7 +2,7 @@ package Striver.DSA.BinarySearch;
 
 public class findPeakElement {
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 5, 1};
+        int[] nums = {-2, -1, 3, 4, 5};
         System.out.println(findPeak1(nums));
     }
 

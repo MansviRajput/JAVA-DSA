@@ -14,11 +14,11 @@ public class firstAndLastOccurrence {
         while(start < nums.length && nums[start]!=target){
             start++;
         }
-        while(end >= 0 && nums[end]!=target){
-            end--;
-        }
         if(start >= nums.length){
             return new int[]{-1,-1};
+        }
+        while(end >= 0 && nums[end]!=target){
+            end--;
         }
         return new int[]{start,end};
     }
