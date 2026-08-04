@@ -4,7 +4,7 @@ public class findNthRootOfNumber {
     public static void main(String[] args) {
         int n = 4;
         int m = 81;
-        System.out.println(solution1(n,m));
+        System.out.println(solution(n,m));
     }
 
     private static int solution1(int n,int m){

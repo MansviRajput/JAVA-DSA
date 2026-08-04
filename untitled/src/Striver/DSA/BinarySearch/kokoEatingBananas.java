@@ -2,7 +2,9 @@ package Striver.DSA.BinarySearch;
 
 public class kokoEatingBananas {
     public static void main(String[] args) {
-
+        int[] nums = {7, 15, 6, 3};
+        int h = 8;
+        System.out.println(solution1(nums,h));
     }
 
     private static int solution1(int[] nums,int h){
