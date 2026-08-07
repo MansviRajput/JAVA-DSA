@@ -2,10 +2,44 @@ package Striver.DSA.BinarySearch;
 
 public class kthElementOf2SortedArray {
     public static void main(String[] args) {
-        int[] a = {2, 3, 6, 7, 9};
-        int[] b = {1, 4, 8, 10};
-        int k = 5;
-        System.out.println(solution2(a, b, k));
+        int[] a = {100, 112, 256, 349, 770};
+        int[] b = {72, 86, 113, 119, 265, 445, 892};
+        int k = 7;
+//        System.out.println(solution2(a, b, k));
+        System.out.println(kthElement(a,b,k));
+    }
+
+    //with binary search
+    private static int kthElement(int[] arr1, int[] arr2,int k) {
+        int m = arr1.length;
+        int n = arr2.length;
+
+        if(m > n){
+            return kthElement(arr2,arr1,k);
+        }
+
+        int low=Math.max(0,k-n);
+        int high=Math.min(k,m);
+
+        while(low<=high){
+            int x = low + (high-low)/2;
+            int y = k-x;
+
+            //boundary case
+            int arr1Left = (x == 0) ? Integer.MIN_VALUE : arr1[x-1];
+            int arr1Right = (x == m) ? Integer.MAX_VALUE : arr1[x];
+            int arr2Left = (y == 0) ? Integer.MIN_VALUE : arr2[y-1];
+            int arr2Right = (y == n) ? Integer.MAX_VALUE : arr2[y];
+
+            if(arr1Left <= arr2Right && arr2Left <= arr1Right){
+                return Math.max(arr1Left, arr2Left);
+            }else if(arr1Left > arr2Right){
+                high = x - 1;
+            }else{
+                low = x + 1;
+            }
+        }
+        return -1;
     }
 
     // with merge
